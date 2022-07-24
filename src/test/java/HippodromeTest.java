@@ -3,6 +3,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.function.Executable;
 
+import java.util.ArrayList;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class HippodromeTest {
@@ -23,8 +25,16 @@ class HippodromeTest {
 
     @Test
     void blinkListParametersShouldThrowIllegalArgumentException(){
-        Hippodrome hippodrome = null;
-        assertThrows(IllegalArgumentException.class, (Executable) hippodrome);
+        assertThrows(IllegalArgumentException.class,()->new Hippodrome(new ArrayList<>()));
+    }
+
+    @Test
+    public
+    void blinkListParametersShouldThrowIllegalArgumentExceptionWithMessageHorsesCannotBeEmpty() {
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> new Hippodrome(new ArrayList<>()));
+        String expectedMessage = "Horses cannot be empty.";
+        String actualMessage = exception.getMessage();
+        assertEquals(expectedMessage,actualMessage);
     }
 
     @BeforeEach
