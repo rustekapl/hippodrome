@@ -69,6 +69,17 @@ class HippodromeTest {
     }
 
     @Test
-    void getWinner() {
+    void checkFoGetHorseWithMaxDistance() {
+        Horse horse1 = new Horse("Horse1",1,1);
+        Horse horse2 = new Horse("Horse2",1,2);
+        Horse horse3 = new Horse("Horse3",1,3);
+        Horse horse4 = new Horse("Horse4",1,4);
+        Horse horse5 = new Horse("Horse5",1,5);
+
+        Hippodrome hippodrome=new Hippodrome(List.of(horse1,horse2,horse3,horse4,horse5));
+        Horse excepcedHorse = horse5;
+        Horse actualHorse = hippodrome.getWinner();
+
+        assertEquals(excepcedHorse,actualHorse);
     }
 }
