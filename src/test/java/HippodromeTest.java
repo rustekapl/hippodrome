@@ -1,34 +1,28 @@
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-import static java.util.Objects.isNull;
+import static org.junit.jupiter.api.Assertions.*;
 
-public class HippodromeTest {
+class HippodromeTest {
 
-    private final List<Horse> horses;
-
-    public HippodromeTest(List<Horse> horses) {
-        if (isNull(horses)) {
-            throw new IllegalArgumentException("Horses cannot be null.");
-        } else if (horses.isEmpty()) {
-            throw new IllegalArgumentException("Horses cannot be empty.");
-        }
-
-        this.horses = horses;
+    @BeforeEach
+    void setUp() {
     }
 
-    public List<Horse> getHorses() {
-        return Collections.unmodifiableList(horses);
+    @AfterEach
+    void tearDown() {
     }
 
-    public void move() {
-        horses.forEach(Horse::move);
+    @Test
+    void getHorses() {
     }
 
-    public Horse getWinner() {
-        return horses.stream()
-                .max(Comparator.comparing(Horse::getDistance))
-                .get();
+    @Test
+    void move() {
+    }
+
+    @Test
+    void getWinner() {
     }
 }
