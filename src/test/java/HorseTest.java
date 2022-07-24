@@ -3,7 +3,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
-import org.junit.jupiter.params.provider.ValueSource;
 import org.mockito.MockedStatic;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -122,6 +121,30 @@ class HorseTest {
         try (MockedStatic<Horse> mockedStatic = mockStatic(Horse.class)) {
             horse.move();
             mockedStatic.verify(()->Horse.getRandomDouble(0.2,0.9));
+        }
+    }
+
+    @ParameterizedTest
+    @CsvSource({
+            "0.0",
+            "0.1",
+            "0.2",
+            "0.5",
+            "0.9",
+            "1.0",
+            "999.999",
+
+    })
+    public void checkMoveCalculateDistance(double random){
+        try(MockedStatic<Horse> mockedStatic =mockStatic(Horse.class)){
+            mockedStatic.when(()->Horse.getRandomDouble(0.2,0.9)).thenReturn(random);
+
+            horse.move();
+
+            double excepted = 1000+100*random;//distance + speed * getRandomDouble(0.2, 0.9)
+            double actual=horse.getDistance();
+            assertEquals(excepted,actual);
+
         }
     }
 

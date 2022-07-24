@@ -1,7 +1,4 @@
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.function.Executable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -77,9 +74,8 @@ class HippodromeTest {
         Horse horse5 = new Horse("Horse5",1,5);
 
         Hippodrome hippodrome=new Hippodrome(List.of(horse1,horse2,horse3,horse4,horse5));
-        Horse excepcedHorse = horse5;
         Horse actualHorse = hippodrome.getWinner();
 
-        assertEquals(excepcedHorse,actualHorse);
+        assertSame(horse5,actualHorse);
     }
 }

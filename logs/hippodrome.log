@@ -1,0 +1,15 @@
+2022-07-24 21:51:09,377 ERROR Hippodrome: Horses list is null
+2022-07-24 21:51:09,388 ERROR Hippodrome: Horses list is empty
+2022-07-24 21:51:09,392 ERROR Hippodrome: Horses list is empty
+2022-07-24 21:51:09,404 ERROR Hippodrome: Horses list is null
+2022-07-24 21:51:36,439 ERROR Horse: Speed is negative
+2022-07-24 21:51:37,058 ERROR Horse: Distance is negative
+2022-07-24 21:51:37,063 ERROR Horse: Distance is negative
+2022-07-24 21:51:37,067 ERROR Horse: Speed is negative
+2022-07-24 21:51:37,198 ERROR Horse: Name is null
+2022-07-24 21:51:37,200 ERROR Horse: Name is blank
+2022-07-24 21:51:37,202 ERROR Horse: Name is null
+2022-07-24 21:51:37,209 ERROR Horse: Name is null
+2022-07-24 21:51:37,212 ERROR Horse: Name is null
+2022-07-24 21:51:37,214 ERROR Horse: Name is null
+2022-07-24 21:51:37,215 ERROR Horse: Name is null
