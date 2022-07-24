@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.function.Executable;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -37,16 +38,17 @@ class HippodromeTest {
         assertEquals(expectedMessage,actualMessage);
     }
 
-    @BeforeEach
-    void setUp() {
-    }
 
-    @AfterEach
-    void tearDown() {
-    }
 
     @Test
-    void getHorses() {
+    void checkGetListOfHorses() {
+        List<Horse> horses = new ArrayList<>();
+        for (int i = 0; i < 30; i++) {
+            horses.add(new Horse("Horse"+i,10,10));
+        }
+        Hippodrome hippodrome=new Hippodrome(horses);
+        assertEquals(horses,hippodrome.getHorses());
+
     }
 
     @Test
